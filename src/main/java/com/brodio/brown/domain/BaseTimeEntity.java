@@ -32,16 +32,4 @@ public abstract class BaseTimeEntity {
 
     @LastModifiedDate
     private LocalDateTime modifiedDate;
-
-    show databases;
-
-    create database brodio;
-
-    alter schema brodio default character set utf8; -- 둘중에 하나를 입력하면 DB 생성됨
-
-    alter database brodio default character set utf8;
-
-    GRANT ALL privileges ON brodio.* TO 'docker_mysql'@'%';
-
-
 }
