@@ -26,6 +26,27 @@ repositories {
 }
 
 dependencies {
+    implementation('org.projectlombok:lombok')
     implementation('org.springframework.boot:spring-boot-starter-web')
+
+    /* spring-boot-starter-data-jpa
+     * 스프링 부트용 Spring Data Jpa 추상화 라이브러리 이다.
+     * 스프링 부트 버전에 맞춰 자동으로 JPA 관련 라이브러리들의 버전을 관리해 준다.*/
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+
+    implementation('mysql:mysql-connector-java')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+    //TDD 테스트 코드 작성 오류로 그래들 5부터 설정이 달라서 추가.
+    annotationProcessor('org.projectlombok:lombok')
+    implementation('org.projectlombok:lombok')
+    testAnnotationProcessor('org.projectlombok:lombok')
+    testImplementation('org.projectlombok:lombok')
+
+}
+//그래들 5부터 설정이 달라서 추가.
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
 }
