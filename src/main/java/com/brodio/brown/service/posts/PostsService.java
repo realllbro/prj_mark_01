@@ -5,9 +5,13 @@ import com.brodio.brown.domain.posts.PostsRepository;
 import com.brodio.brown.web.dto.PostsResponseDto;
 import com.brodio.brown.web.dto.PostsSaveRequestDto;
 import com.brodio.brown.web.dto.PostsUpdateRequestDto;
+import com.brodio.brown.web.dto.PostsListResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -34,5 +38,12 @@ public class PostsService {
                 new IllegalArgumentException("해당 게시글이 없습니다. id="+ id ));
 
         return new PostsResponseDto(entity);
+    }
+
+    @Transactional(readOnly = true)
+    public List<PostsListResponseDto> findAllDesc(){
+        return postsRepository.findAllDesc().stream()
+                .map(PostsListResponseDto::new)
+                .collect(Collectors.toList());
     }
 }

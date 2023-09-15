@@ -43,6 +43,9 @@ dependencies {
     testAnnotationProcessor('org.projectlombok:lombok')
     testImplementation('org.projectlombok:lombok')
 
+    //머스테치
+    implementation('org.springframework.boot:spring-boot-starter-mustache')
+
 }
 //그래들 5부터 설정이 달라서 추가.
 configurations {
