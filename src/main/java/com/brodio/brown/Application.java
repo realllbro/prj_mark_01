@@ -8,10 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
  * @SpringBootApplication 이 있는 위치부터 설정을 읽어가기 때문에 이 클래스는 항상 프로젝트의 최상단에 위치해야 만 한다.
  *
  * @EnableJpaAuditing
- * JPA Auditing 어노테이션들을 모두 활성화 할 수 있게 활성화 어노테이션 추가
- * */
-
-
+ * JPA Auditing 어노테이션들을 모두 활성화 할 수 있게 활성화 어노테이션 추가 */
 @EnableJpaAuditing
 @SpringBootApplication
 
